@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f0f1e, #1a0a2e);
+  padding: 30px;
+  color: #fff;
+  min-height: 50vh;
+}
+
+h1 {
+    font-size: 30px;
+    text-align: center;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+}
+
+
+form {
+    width: 500px;
+    margin: 140px auto;
+    background: rgba(20, 20, 40, 0.4);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 25px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+    margin-bottom: 30px;
+}
+
+.submit-bttn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.submit-bttn button {
+    width: 100%;
+    height: 45px;
+    padding: 10px 15px;
+    background: linear-gradient(90deg, #00ffff, #ff00ff);
+    color: #000;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.submit-bttn button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+}
+
+.User-text{
+    padding: 10px auto;
+}
+
+.User {
+    background: #ffffff;
+    height: 45px;
+    font-size: 16px;
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    border-radius: 10px;
+    color: #fff;
+    outline: none;
+}
+
+.User a:hover {
+    background: #ffd3f2;
+    color: #fff;
+    border-color: #f7b2f7;
+}
+
+.password {
+    background: #ffffff;
+    height: 45px;
+    font-size: 16px;
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    border-radius: 10px;
+    color: #fff;
+    outline: none;
+}
