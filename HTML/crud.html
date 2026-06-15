@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>CRUD Usuarios</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
   <link rel="icon" type="image/png" href="../MULTIMEDIA/folder.png">
   <link rel="stylesheet" href="../CSS/style.css">
 </head>
@@ -23,7 +25,7 @@
       <br><br><hr style="border-color:rgba(255,255,255,0.1)"><br>
       <a href="#" onclick="toggleReporte(); return false;" class="btn-reporte">Reporte</a>
 
-      <table> 
+      <table>
         <thead>
           <tr>
             <th>ID</th>
@@ -36,7 +38,6 @@
       </table>
     </div>
 
-    <!-- Sección Gráfica -->
     <div id="graficaSection">
       <h3>Gráfica de Usuarios</h3>
       <div id="chartWrapper">
@@ -77,6 +78,8 @@
         <tbody id="tbodyReporte"></tbody>
       </table>
       <br>
+ 
+      <button class="btn btn-add" onclick="exportarPDF()">Exportar PDF</button>
       <button class="btn btn-add" onclick="toggleReporte()">Cerrar Reporte</button>
     </div>
 

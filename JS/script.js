@@ -162,4 +162,62 @@ function generarReporteCompleto() {
   });
 }
 
+
+async function exportarPDF() {
+  const datos = JSON.parse(localStorage.getItem('usuarios')) || [];
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+  const pageW = doc.internal.pageSize.getWidth();
+
+
+  doc.setFontSize(18);
+  doc.setFont('helvetica', 'bold');
+  doc.text('Reporte de Usuarios', pageW / 2, 16, { align: 'center' });
+
+ 
+  doc.setFontSize(10);
+  doc.setFont('helvetica', 'normal');
+  doc.text('Generado: ' + new Date().toLocaleString('es-SV'), pageW / 2, 23, { align: 'center' });
+
+
+  doc.autoTable({
+    startY: 28,
+    head: [['Métrica', 'Valor']],
+    body: [
+      ['Total de usuarios',  datos.length],
+      ['Primer usuario',     datos[0]?.nombre || '—'],
+      ['Último usuario',     datos[datos.length - 1]?.nombre || '—'],
+    ],
+    styles: { fontSize: 11 },
+    headStyles: { fillColor: [41, 128, 185] },
+    margin: { left: 14, right: 14 }
+  });
+
+  let afterStats = doc.lastAutoTable.finalY + 10;
+
+  if (grafica) {
+    const imgData = document.getElementById('myChart').toDataURL('image/png');
+    const imgW = 120, imgH = 90;
+    doc.text('Gráfica de Usuarios', 14, afterStats);
+    doc.addImage(imgData, 'PNG', (pageW - imgW) / 2, afterStats + 4, imgW, imgH);
+    afterStats += imgH + 16;
+  }
+
+  const filas = datos.length > 0
+    ? datos.map((u, i) => [i + 1, u.nombre, u.email])
+    : [['—', 'Sin usuarios registrados', '']];
+
+  doc.autoTable({
+    startY: afterStats,
+    head: [['#', 'Nombre', 'Email']],
+    body: filas,
+    styles: { fontSize: 11 },
+    headStyles: { fillColor: [41, 128, 185] },
+    columnStyles: { 0: { cellWidth: 14 } },
+    margin: { left: 14, right: 14 }
+  });
+
+  doc.save('reporte-usuarios.pdf');
+}
+
 mostrar();

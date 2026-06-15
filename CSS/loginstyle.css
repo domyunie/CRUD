@@ -30,6 +30,8 @@ form {
     box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
 }
 
+
+
 .submit-bttn {
     width: 100%;
     border: none;
@@ -55,10 +57,10 @@ form {
     box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
 }
 
+
+
 .User-text{
     padding: 10px auto;
-
-
 }
 
 .username {
