@@ -61,7 +61,7 @@ form {
 
 }
 
-.User {
+.username {
     background: #ffffff;
     height: 45px;
     font-size: 16px;
@@ -75,7 +75,7 @@ form {
     outline: none;
 }
 
-.User a:hover {
+.username a:hover {
     background: #ffd3f2;
     color: #fff;
     border-color: #f7b2f7;
