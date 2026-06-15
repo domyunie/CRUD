@@ -23,6 +23,14 @@ h1 {
   text-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
 }
 
+h3 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+  margin-bottom: 10px;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+
+}
+
 .form-box,
 .table-box {
   background: rgba(20, 20, 40, 0.4);
@@ -199,4 +207,38 @@ tr:hover {
 
 #tablaReporte th {
   color: #00ffff;
+}
+
+
+.content-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+
+.img-neon {
+    width: 300px;
+    border-radius: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+ 
+.img-neon:hover {
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+.img-neon.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 20px #00ffff;
+    }
+    to {
+        box-shadow: 0 0 40px #ff00ff, 0 0 60px #00ffff;
+    }
 }

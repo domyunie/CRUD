@@ -20,6 +20,7 @@
       <button class="btn btn-add" onclick="guardar()">Guardar</button>
     </div>
 
+
     <div class="table-box">
       <a href="#" onclick="toggleGrafica(); return false;" class="btn-grafica">Gráfica</a>
       <br><br><hr style="border-color:rgba(255,255,255,0.1)"><br>
@@ -37,6 +38,27 @@
         <tbody id="tablaUsuarios"></tbody>
       </table>
     </div>
+
+
+<div>
+    <h3>Este perro te dice hola! :D</h3>
+</div>
+
+<div class="content content-center">
+    <img src="../Multimedia/chucho.png" alt="Chucho" class="img-neon"> </div>
+
+<script>
+    const imgs = document.querySelectorAll('.img-neon'); // Aquí sí va el punto
+    window.addEventListener('scroll', () => {
+        imgs.forEach(img => {
+            const top = img.getBoundingClientRect().top;
+            if (top < window.innerHeight - 100) {
+                img.classList.add('show'); // Aquí no va el punto porque ya se sabe que es una clase
+            }
+        });
+    });
+</script>
+
 
     <div id="graficaSection">
       <h3>Gráfica de Usuarios</h3>
